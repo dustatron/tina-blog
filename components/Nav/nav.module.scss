@@ -1,0 +1,30 @@
+.nav {
+  background: blue;
+}
+
+.brand {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin: auto;
+  &__title {
+    display: grid;
+    place-items: center;
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    li {
+      color: white;
+      margin: 0 10px;
+    }
+  }
+}

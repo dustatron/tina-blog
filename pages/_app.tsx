@@ -6,6 +6,8 @@ import {
   GithubMediaStore,
 } from "react-tinacms-github";
 
+import Nav from "../components/Nav";
+
 export default class Site extends App {
   cms: TinaCMS;
 
@@ -59,7 +61,8 @@ export default class Site extends App {
           {/**
            * 6. Add a button for entering Preview/Edit Mode
            */}
-          <EditLink cms={this.cms} />
+          {/* <EditLink cms={this.cms} /> */}
+          <Nav cms={this.cms} />
           <Component {...pageProps} />
         </TinacmsGithubProvider>
       </TinaProvider>
@@ -88,14 +91,14 @@ const onLogout = () => {
   });
 };
 
-export interface EditLinkProps {
-  cms: TinaCMS;
-}
+// export interface EditLinkProps {
+//   cms: TinaCMS;
+// }
 
-export const EditLink = ({ cms }: EditLinkProps) => {
-  return (
-    <button onClick={() => cms.toggle()}>
-      {cms.enabled ? "Exit Edit Mode" : "Edit This Site"}
-    </button>
-  );
-};
+// export const EditLink = ({ cms }: EditLinkProps) => {
+//   return (
+//     <button onClick={() => cms.toggle()}>
+//       {cms.enabled ? "Exit Edit Mode" : "Edit This Site"}
+//     </button>
+//   );
+// };
