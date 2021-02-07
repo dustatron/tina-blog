@@ -34,7 +34,7 @@ export default function Home({ file }) {
           {/**
            * Render the title from `home.json`
            */}
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          This is a test Blog using tina CMS
           {data.title}
         </h1>
         //...
