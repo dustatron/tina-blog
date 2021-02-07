@@ -15,7 +15,7 @@ export default function Home({ file }) {
     label: "Home Page",
     fields: [
       { name: "title", component: "text" },
-      { name: "subTitle", component: "text" },
+      { name: "Sub Title", component: "text" },
     ],
   };
 
@@ -38,7 +38,7 @@ export default function Home({ file }) {
            */}
           {data.title}
         </h1>
-        <h2>{data.subTitle}</h2>
+        <h2>{data["Sub Title"]}</h2>
       </main>
     </div>
   );
