@@ -12,6 +12,7 @@ export default function About({ file }) {
     fields: [
       { name: "Title", component: "text" },
       { name: "Sub Title", component: "text" },
+      { name: "Body", component: "text" },
     ],
   };
 
@@ -24,6 +25,7 @@ export default function About({ file }) {
     <div>
       <h1>{data["Title"]}</h1>
       <h2>{data["Sub Title"]}</h2>
+      <div>{data["Body"]}</div>
     </div>
   );
 }
