@@ -11,10 +11,12 @@ import {
 } from "react-tinacms-github";
 
 export default function Home({ file }) {
-  // const data = file.data;
   const formOptions = {
     label: "Home Page",
-    fields: [{ name: "title", component: "text" }],
+    fields: [
+      { name: "title", component: "text" },
+      { name: "subTitle", component: "text" },
+    ],
   };
 
   // Registers a JSON Tina Form
@@ -26,7 +28,7 @@ export default function Home({ file }) {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Tina Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
@@ -34,12 +36,10 @@ export default function Home({ file }) {
           {/**
            * Render the title from `home.json`
            */}
-          This is a test Blog using tina CMS
           {data.title}
         </h1>
-        //...
+        <h2>{data.subTitle}</h2>
       </main>
-      //...
     </div>
   );
 }
