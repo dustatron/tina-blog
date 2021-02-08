@@ -8,17 +8,17 @@ import {
 } from "react-tinacms-github";
 
 export default function About({ file }) {
-  // const formOptions = {
-  //   label: "About Page",
-  //   fields: [
-  //     { name: "Title", component: "text" },
-  //     { name: "Sub Title", component: "text" },
-  //     { name: "Body", component: "text" },
-  //   ],
-  // };
+  const formOptions = {
+    label: "About Page",
+    fields: [
+      { name: "Title", component: "text" },
+      { name: "Sub Title", component: "text" },
+      { name: "Body", component: "text" },
+    ],
+  };
 
-  // const [data, formData] = useGithubJsonForm(file, formOptions);
-  const [modifiedValues, form] = useForm(file.data);
+  const [data, form] = useGithubJsonForm(file, formOptions);
+  // const [modifiedValues, form] = useForm(file.data);
 
   usePlugin(form);
 
@@ -27,8 +27,16 @@ export default function About({ file }) {
   return (
     <div>
       <InlineForm form={form}>
-        <h1>{modifiedValues.title}</h1>
-        <InlineText name="Title" />
+        {/* <h1>{data.title}</h1> */}
+        <h1>
+          <InlineText name="title" />
+        </h1>
+        <div>
+          <InlineText name="subTitle" />
+        </div>
+        <div>
+          <InlineText name="body" />
+        </div>
         {/* <h1>{modifiedValues["Title"]}</h1>
         <h2>{modifiedValues["Sub Title"]}</h2>
         <div>{modifiedValues["Body"]}</div> */}
