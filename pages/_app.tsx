@@ -5,8 +5,9 @@ import {
   TinacmsGithubProvider,
   GithubMediaStore,
 } from "react-tinacms-github";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import Nav from "../components/Nav";
+import NavMenu from "../components/Nav";
 
 export default class Site extends App {
   cms: TinaCMS;
@@ -62,7 +63,7 @@ export default class Site extends App {
            * 6. Add a button for entering Preview/Edit Mode
            */}
           {/* <EditLink cms={this.cms} /> */}
-          <Nav cms={this.cms} />
+          <NavMenu cms={this.cms} />
           <Component {...pageProps} />
         </TinacmsGithubProvider>
       </TinaProvider>

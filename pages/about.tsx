@@ -1,23 +1,14 @@
 import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { usePlugin, useForm } from "tinacms";
-import { InlineForm, InlineText } from "react-tinacms-inline";
+import { InlineForm, InlineText, InlineTextarea } from "react-tinacms-inline";
 import {
   useGithubJsonForm,
   useGithubToolbarPlugins,
 } from "react-tinacms-github";
 
 export default function About({ file }) {
-  const formOptions = {
-    label: "About Page",
-    fields: [
-      { name: "Title", component: "text" },
-      { name: "Sub Title", component: "text" },
-      { name: "Body", component: "text" },
-    ],
-  };
-
-  const [data, form] = useGithubJsonForm(file, formOptions);
+  const [, form] = useGithubJsonForm(file);
   // const [modifiedValues, form] = useForm(file.data);
 
   usePlugin(form);
@@ -25,22 +16,18 @@ export default function About({ file }) {
   useGithubToolbarPlugins();
 
   return (
-    <div>
+    <div className="container">
       <InlineForm form={form}>
-        <h1>{data.title}</h1>
         <h1>
           <InlineText name="title" />
         </h1>
-        <div>{data.subTitle}</div>
-        <div>
+        <h2>
           <InlineText name="subTitle" />
-        </div>
+        </h2>
+        <hr />
         <div>
-          <InlineText name="body" />
+          <InlineTextarea name="body" />
         </div>
-        {/* <h1>{modifiedValues["Title"]}</h1>
-        <h2>{modifiedValues["Sub Title"]}</h2>
-        <div>{modifiedValues["Body"]}</div> */}
       </InlineForm>
     </div>
   );
