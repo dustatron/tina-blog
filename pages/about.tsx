@@ -1,6 +1,8 @@
+import ReactMarkdown from "react-markdown";
 import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { usePlugin, useForm } from "tinacms";
+import { InlineWysiwyg } from "react-tinacms-editor";
 import { InlineForm, InlineText, InlineTextarea } from "react-tinacms-inline";
 import {
   useGithubJsonForm,
@@ -8,7 +10,7 @@ import {
 } from "react-tinacms-github";
 
 export default function About({ file }) {
-  const [, form] = useGithubJsonForm(file);
+  const [data, form] = useGithubJsonForm(file);
   // const [modifiedValues, form] = useForm(file.data);
 
   usePlugin(form);
@@ -26,7 +28,9 @@ export default function About({ file }) {
         </h2>
         <hr />
         <div>
-          <InlineTextarea name="body" />
+          <InlineWysiwyg name="body" format="markdown">
+            <ReactMarkdown source={data.body} />
+          </InlineWysiwyg>
         </div>
       </InlineForm>
     </div>
