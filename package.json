@@ -18,6 +18,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-tinacms-github": "^0.36.1",
+    "react-tinacms-inline": "^0.36.1",
     "sass": "^1.32.6",
     "styled-components": "^5.2.1",
     "tinacms": "^0.36.1"
