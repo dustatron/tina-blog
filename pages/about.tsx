@@ -27,10 +27,11 @@ export default function About({ file }) {
   return (
     <div>
       <InlineForm form={form}>
-        {/* <h1>{data.title}</h1> */}
+        <h1>{data.title}</h1>
         <h1>
           <InlineText name="title" />
         </h1>
+        <div>{data.subTitle}</div>
         <div>
           <InlineText name="subTitle" />
         </div>
